@@ -24,8 +24,17 @@ module TFIDF
             '%.4f' % @corpus.idf(term),
             '%.4f' % @corpus.tfidf(term, document)
           ]
-        end.sort_by(&:last).reverse[0..10]
+        end.sort_by(&:last).reverse[0..4]
+
         pp results
+
+        keywords  = results.map(&:first).map(&:strip)
+        sentences = IO.read(Dir["./test/fixtures/*"].first).split(".").select do |sentence|
+          keywords.any? do |keyword|
+            sentence.include?(keyword)
+          end
+        end
+        pp sentences
       end
     end
   end
