@@ -4,7 +4,6 @@ module TFIDF
   class Document
     extend Forwardable
 
-    attr_accessor :enemerable
     attr_accessor :term_frequencies
 
     def_delegators :term_frequencies, :size, :"[]", :sort
