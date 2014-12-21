@@ -9,7 +9,7 @@ http://en.wikipedia.org/wiki/Tf%E2%80%93idf
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tf-idf'
+gem 'tfidf'
 ```
 
 And then execute:
