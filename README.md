@@ -26,9 +26,10 @@ Or install it yourself as:
 require "tfidf"
 
 corpus = TFIDF::Corpus.new([
-  TFIDF::Document.new("nothing overlaps".split(" ")),
-  TFIDF::Document.new("something overlaps".split(" "))
+  TFIDF::Document.new(%w(nothing overlaps)),
+  TFIDF::Document.new(%w(something overlaps))
 ])
+# => => #<TFIDF::Corpus:0x007fb2023edcd8 @documents=[#<TFIDF::Document:0x007fb201921818 @term_frequencies={ ...
 corpus.idf("overlaps")
 # => 0
 corpus.idf("nothing")
