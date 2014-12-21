@@ -15,9 +15,16 @@ module TFIDF
       end
 
       it "#tfidf" do
-        document = @corpus.documents.last
+        document = @corpus.documents.first
         terms    = document.term_frequencies.keys
-        results  = terms.map { |term| [term, @corpus.tfidf(term, document)] }.sort_by(&:last)
+        results  = terms.map do |term|
+          [
+            '%10s' % term,
+            '%.4f' % document.tf(term),
+            '%.4f' % @corpus.idf(term),
+            '%.4f' % @corpus.tfidf(term, document)
+          ]
+        end.sort_by(&:last).reverse[0..10]
         pp results
       end
     end
