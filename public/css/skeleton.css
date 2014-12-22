@@ -421,6 +421,11 @@ there.
 
 /** Custom */
 
+table.window, pre.window {
+  height: 200px;
+  overflow: auto;
+}
+
 table form {
   margin-bottom: 0;
 }
