@@ -1,9 +1,9 @@
 h1 Corpuses
 
 form action="/corpuses" method="post"
-  input type="submit" value="New Corpus"
+  input.u-full-width type="submit" value="New Corpus"
 
-table
+table.u-full-width
   tbody
     tr
       th id
@@ -15,7 +15,7 @@ table
       tr
         td = index
         td = corpus.documents.size
-        td : a href="/corpuses/#{index}" Show
+        td : a.button href="/corpuses/#{index}" Show
         td
           form action="/corpuses/#{index}" method="post"
             input type="hidden" name="_method" value="delete"
