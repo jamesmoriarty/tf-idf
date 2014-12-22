@@ -8,7 +8,7 @@ module TFIDF
         @stops = @stops.split(",")
         @corpus = Corpus.new
         Dir["./test/fixtures/*"].map { |path| IO.read(path) }.each do |text|
-          document = Document.new(text.downcase.split(/[^a-z]/))
+          document = Document.new(text.downcase.split(/[^\w]/))
           @stops.each { |word| document.term_frequencies.delete(word) }
           @corpus.documents << document
         end

@@ -1,0 +1,22 @@
+h1 Corpuses
+
+form action="/corpuses" method="post"
+  input type="submit" value="New Corpus"
+
+table
+  tbody
+    tr
+      th id
+      th documents
+      th
+      th
+    - @corpuses.each_with_index do |corpus, index|
+      - next unless corpus
+      tr
+        td = index
+        td = corpus.documents.size
+        td : a href="/corpuses/#{index}" Show
+        td
+          form action="/corpuses/#{index}" method="post"
+            input type="hidden" name="_method" value="delete"
+            input type="submit" value="Delete"
