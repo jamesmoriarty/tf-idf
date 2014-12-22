@@ -4,11 +4,12 @@ module TFIDF
   class Document
     extend Forwardable
 
-    attr_accessor :term_frequencies
+    attr_accessor :text, :term_frequencies
 
     def_delegators :term_frequencies, :size, :"[]", :sort
 
-    def initialize(enumerable)
+    def initialize(enumerable, text = nil)
+      self.text             = text
       self.term_frequencies = Hash.new(0)
 
       enumerable.each do |term|

@@ -1,0 +1,34 @@
+h1 Document #{params[:id]}
+
+h2 Text
+
+pre
+  == @document.text
+
+h2 Term TF-IDF
+
+table
+  tbody
+    tr
+      th Term
+      th TF
+      th IDF
+      th TF-IDF
+    - @tfidf.each do |hash|
+      tr
+        td = hash[:term]
+        td = '%.4f' % hash[:tf]
+        td = '%.4f' % hash[:idf]
+        td = '%.4f' % hash[:tfidf]
+
+h2 Summary
+
+table
+  tbody
+    tr
+      th Score
+      th Sentence
+    - @sentences.each do |hash|
+      tr
+        td = hash[:score]
+        td = hash[:text]
