@@ -57,7 +57,7 @@ class Server < Sinatra::Base
       }
     end.sort_by { |hash| hash[:tfidf] }.reverse
     @scores = Hash[@tfidf.map { |hash| [hash[:term], hash[:tfidf]] }]
-    @sentences = @document.text.split(/[\?.\-\;\:\/]/).map do |sentence|
+    @sentences = @document.text.split(/[\?.\-\;\/]/).map do |sentence|
       {
         score: sentence.downcase.split(/[^\w]/).map { |word| @scores[word] || 0 }.inject(&:+),
         text:  sentence
