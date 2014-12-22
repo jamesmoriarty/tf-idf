@@ -11,4 +11,7 @@ html
     .container
       .row
         a href="/" Home
+        - if params[:corpus_id]
+          | &nbsp;
+          a href="/corpuses/#{params[:corpus_id]}" Corpus
       == yield
