@@ -2,13 +2,13 @@ h1 Corpus #{params[:id]}
 
 form action="/corpuses/#{params[:id]}/documents" method="post"
   .row
-    textarea name="document[text]"
+    textarea.u-full-width name="document[text]"
   .row
-    input type="submit" value="New Document"
+    input.u-full-width type="submit" value="New Document"
 
 h2 Documents
 
-table
+table.u-full-width
   tbody
     tr
       th id
@@ -19,7 +19,7 @@ table
       tr
         td = index
         td = document.term_frequencies.size
-        td : a href="/corpuses/#{params[:id]}/documents/#{index}" Show
+        td : a.button href="/corpuses/#{params[:id]}/documents/#{index}" Show
         td
           form action="/corpuses/#{params[:id]}/documents/#{index}" method="post"
             input type="hidden" name="_method" value="delete"
