@@ -4,6 +4,17 @@ tf–idf, short for term frequency–inverse document frequency, is a numerical 
 
 http://en.wikipedia.org/wiki/Tf%E2%80%93idf
 
+## Example Web App
+
+![Screenshot](https://raw.githubusercontent.com/jamesmoriarty/tf-idf/master/app/public/images/Screen%20Shot%202014-12-22%20at%2011.29.54%20pm.png)
+
+```
+cd app
+bundle
+rackup
+open http://localhost:9292/corpuses
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
