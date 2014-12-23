@@ -77,7 +77,7 @@ class Server < Sinatra::Base
   if CorpusRepository.all.compact.size.zero?
     corpus = TFIDF::Corpus.new
 
-    Dir["../test/fixtures/*"].map(&IO.method(:read)).each do |text|
+    Dir["./fixtures/*"].map(&IO.method(:read)).each do |text|
       corpus.documents << TFIDF::Document.new(text.downcase.split(/[^\w]/), text)
     end
 
