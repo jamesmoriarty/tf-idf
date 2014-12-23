@@ -1,5 +1,6 @@
-PATH
-  remote: ../
+GIT
+  remote: git://github.com/jamesmoriarty/tf-idf.git
+  revision: 60aef47af533a180d5031b12d12cf23bc6c8ac56
   specs:
     tfidf (0.9.1)
 
