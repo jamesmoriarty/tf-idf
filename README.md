@@ -6,7 +6,7 @@ http://en.wikipedia.org/wiki/Tf%E2%80%93idf
 
 ## Example Web App
 
-https://glacial-savannah-5723.herokuapp.com/corpuses
+https://james-moriarty-tf-idf.herokuapp.com/corpuses
 
 ![Screenshot](https://raw.githubusercontent.com/jamesmoriarty/tf-idf/master/app/public/images/Screen%20Shot%202014-12-23%20at%2012.08.00%20am.png)
 
