@@ -5,6 +5,18 @@ h2 Text
 pre.u-full-width.window
   == @document.text
 
+h2 Summary
+
+table.u-full-width
+  tbody
+    tr
+      th Score
+      th Sentence
+    - @sentences.each do |hash|
+      tr
+        td = hash[:score]
+        td = hash[:text]
+
 h2 Term TF-IDF
 
 table.u-full-width
@@ -20,15 +32,3 @@ table.u-full-width
         td = '%.4f' % hash[:tf]
         td = '%.4f' % hash[:idf]
         td = '%.4f' % hash[:tfidf]
-
-h2 Summary
-
-table.u-full-width
-  tbody
-    tr
-      th Score
-      th Sentence
-    - @sentences.each do |hash|
-      tr
-        td = hash[:score]
-        td = hash[:text]
